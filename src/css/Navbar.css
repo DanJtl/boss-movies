@@ -1,0 +1,23 @@
+/*
+#CC0001 
+#AF0000 
+#003A6D 
+#07264e 
+#061735 
+*/
+
+
+
+nav {
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #061735;
+}
+
+#logo {
+    color: #CC0001;
+    margin-left: 2rem;  
+    font-size: 2rem;
+}
