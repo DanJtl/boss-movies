@@ -6,8 +6,6 @@
 #061735 
 */
 
-
-
 nav {
     width: 100vw;
     display: flex;
@@ -20,4 +18,22 @@ nav {
     color: #CC0001;
     margin-left: 2rem;  
     font-size: 2rem;
+}
+
+#toggle-color {
+    position: realtive;
+    background-color: #fff;
+    width: 3rem;
+    height: 1.5rem;
+    margin-right: 2rem;
+    border-radius: 1rem;
+}
+
+#toggle-color-on {
+    position: absolute;
+    background-color: #CC0001;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    transition: .5s;
 }

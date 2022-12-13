@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { ImSearch } from 'react-icons/im'
 import '../css/Navbar.css'
 
 function Navbar() {
+    const [toggle, setToggle] = useState(true);
+
     return (
         <>
             <nav className=''>
@@ -12,8 +14,8 @@ function Navbar() {
                 </div>
                 <input type="text" placeholder='Search a movie...'></input>
                 <ImSearch />
-                <div id="night-switch">
-                    <div id="night-switch-move"></div>
+                <div id="toggle-color">
+                    <div id="toggle-color-on"></div>
                 </div>
             </nav>
         </>
