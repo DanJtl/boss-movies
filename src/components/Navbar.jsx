@@ -1,21 +1,23 @@
 import React, { useState } from 'react'
 import { ImSearch } from 'react-icons/im'
-import '../css/Navbar.css'
+// import 'tailwindcss/dist/tailwind.min.css';
 
 function Navbar() {
     const [toggle, setToggle] = useState(true);
 
     return (
         <>
-            <nav className=''>
-                <div className=''>
-                    <h1 id="logo">BossMovies</h1>
-
-                </div>
-                <input type="text" placeholder='Search a movie...'></input>
-                <ImSearch />
-                <div id="toggle-color">
-                    <div id="toggle-color-on"></div>
+            <nav className="bg-gray-800 flex items-center justify-between p-4">
+                <a href="#" className="text-white font-bold">
+                    My App
+                </a>
+                <div>
+                    <a href="#" className="text-white hover:text-gray-300 mr-4">
+                        Home
+                    </a>
+                    <a href="#" className="text-white hover:text-gray-300">
+                        About
+                    </a>
                 </div>
             </nav>
         </>
@@ -23,3 +25,4 @@ function Navbar() {
 }
 
 export default Navbar
+
