@@ -22,7 +22,7 @@ function Main() {
 
     return (
         <section className="bg-gray-900 text-white py-16">
-            <div className="container mx-auto px-6">
+            <div className="container mx-auto px-6 w-10/12">
                 <div className="flex items-center">
                     <div className="w-full md:w-1/2 pr-6 block ">
                         <h1 className="text-4xl font-bold leading-tight mb-4 text-center">
