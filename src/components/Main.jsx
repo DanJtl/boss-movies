@@ -11,7 +11,7 @@ function Main() {
         const fetchData = async () => {
             try {
                 const response = await axios.get(requests.upcomingMovies);
-                setMovies(response.data.results)
+                setMovies(response.data.results);
             } catch (error) {
                 console.log("Something went wrong...");
             }
@@ -33,11 +33,11 @@ function Main() {
                         </p>
                         <div className="flex items-center justify-center mt-4">
                             <p className="text-lg leading-normal font-bold text-center px-4">
-                                Rating: {movie?.vote_average}
+                                {movie?.vote_average !== 0 ? `Rating: ${movie?.vote_average}` : "Rating: No rating yet"}
                             </p>
                             <div className='px-4'>
                                 <button className="bg-secondColor text-white font-bold py-3 px-4 rounded-lg hover:text-secondColor hover:bg-white">
-                                    Watch Movie!
+                                    Watch Trailer!
                                 </button>
                             </div>
                         </div>

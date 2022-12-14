@@ -1,7 +1,5 @@
-import { Routes, Route, NavLink } from "react-router-dom";
-import Home from "../pages/Home";
-import Movies from "../pages/Movies";
-import Tvseries from "../pages/Tvseries";
+import { NavLink } from "react-router-dom";
+
 
 function Navbar() {
 
@@ -9,7 +7,7 @@ function Navbar() {
         <>
             <nav className="flex items-center justify-between flex-wrap bg-secondColor p-6">
                 <div className="flex items-center flex-shrink-0 text-white mr-20">
-                    <NavLink to="Home">
+                    <NavLink to="/">
                         <h1 className="font-bold text-3xl tracking-tight hover:text-fifthColor">BossMovies</h1>
                     </NavLink>
                 </div>
@@ -31,11 +29,7 @@ function Navbar() {
                     </div>
                 </div>
             </nav>
-            <Routes>
-                <Route path='Home' element={<Home />} />
-                <Route path='Movies' element={<Movies />} />
-                <Route path='Tvseries' element={<Tvseries />} />
-            </Routes>
+            
         </>
     );
 }
