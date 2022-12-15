@@ -21,9 +21,9 @@ function Main() {
     }, []);
 
     return (
-        <section className="bg-gray-900 text-white py-16">
+        <section className="bg-fifthColor text-white py-16">
             <div className="container mx-auto px-6 w-10/12">
-                <div className="flex items-center">
+                <div className="flex-row md:flex items-center">
                     <div className="w-full md:w-1/2 pr-6 block ">
                         <h1 className="text-4xl font-bold leading-tight mb-4 text-center">
                             {movie?.original_title}
@@ -31,18 +31,21 @@ function Main() {
                         <p className="text-lg leading-normal my-8 text-center">
                             {movie?.overview}
                         </p>
+                        <p className="text-md text-gray-400 leading-normal my-8 text-center">
+                            Release Date: {movie?.release_date}
+                        </p>
                         <div className="flex items-center justify-center mt-4">
                             <p className="text-lg leading-normal font-bold text-center px-4">
                                 {movie?.vote_average !== 0 ? `Rating: ${movie?.vote_average}` : "Rating: No rating yet"}
                             </p>
-                            <div className='px-4'>
+                            <div className='p-4'>
                                 <button className="bg-secondColor text-white font-bold py-3 px-4 rounded-lg hover:text-secondColor hover:bg-white">
                                     Watch Trailer!
                                 </button>
                             </div>
                         </div>
                     </div>
-                    <div className="w-1/2 hidden md:block">
+                    <div className="w-full md:w-1/2 mx-auto py-4">
                         <img className='rounded-3xl border-4' src={`https://image.tmdb.org/t/p/original/${movie?.backdrop_path}`} alt={movie?.title}/>
                     </div>
                 </div>
