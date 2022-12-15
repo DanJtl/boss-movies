@@ -28,10 +28,10 @@ function Main() {
                         <h1 className="text-4xl font-bold leading-tight mb-4 text-center">
                             {movie?.original_title}
                         </h1>
-                        <p className="text-lg leading-normal my-8 text-center">
+                        <p className="text-lg leading-normal my-4 text-center">
                             {movie?.overview}
                         </p>
-                        <p className="text-md text-gray-400 leading-normal my-8 text-center">
+                        <p className="text-md text-gray-400 leading-normal my-4 text-center">
                             Release Date: {movie?.release_date}
                         </p>
                         <div className="flex items-center justify-center mt-4">
@@ -45,7 +45,7 @@ function Main() {
                             </div>
                         </div>
                     </div>
-                    <div className="w-full md:w-1/2 mx-auto py-4">
+                    <div className="w-full md:w-1/2 mx-auto py-4 my-4">
                         <img className='rounded-3xl border-4' src={`https://image.tmdb.org/t/p/original/${movie?.backdrop_path}`} alt={movie?.title}/>
                     </div>
                 </div>
