@@ -34,5 +34,4 @@ function Slider({title, fetchURL}) {
     );
 }
 
-
 export default Slider
