@@ -20,7 +20,7 @@ function Slider({title, fetchURL}) {
 
     return (
         <>
-            <div className='w-10/12 mx-auto mt-6'>
+            <div className='w-10/12 mx-auto my-6'>
                 <h2 className='text-white md:text-xl font-bold'>{title}</h2>   
                 <div className='relative flex items-center'>
                     <div id={'slider'} className="w-full h-full overflow-x-scroll whitespace-nowrap scroll-smooth scrollbar-hide relative">
