@@ -3,6 +3,7 @@ import axios from 'axios';
 import requests from '../Requests';
 
 function Main() {
+    
     const [movies, setMovies] = useState([]);
 
     const movie = movies[Math.floor(Math.random() * movies.length)]
@@ -19,6 +20,12 @@ function Main() {
 
         fetchData();
     }, []);
+
+    const movieUrl = `https://www.themoviedb.org/movie/${movie?.id}`;    
+
+    const handleClick = () => {
+        window.open(movieUrl, '_blank');
+    };
 
     return (
         <section className="bg-thirdColor text-white py-16">
@@ -39,8 +46,8 @@ function Main() {
                                 {movie?.vote_average !== 0 ? `Rating: ${movie?.vote_average}` : "Rating: No rating yet"}
                             </p>
                             <div className='p-4'>
-                                <button className="bg-secondColor text-white font-bold py-3 px-4 rounded-lg hover:text-secondColor hover:bg-white">
-                                    Watch Trailer!
+                                <button onClick={handleClick} className="bg-secondColor text-white font-bold py-3 px-4 rounded-lg hover:text-secondColor hover:bg-white">
+                                    Read More!
                                 </button>
                             </div>
                         </div>
