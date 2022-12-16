@@ -3,7 +3,7 @@ import React,{ useState, useEffect } from 'react';
 import Movie from './Movie';
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai'
 
-function Slider({title, fetchURL}) {
+function Slider({title, fetchURL, sliderId}) {
     const [movies, setMovies] = useState([]);
 
     useEffect(() => {
@@ -19,23 +19,35 @@ function Slider({title, fetchURL}) {
         fetchData();
     }, [fetchURL]);
 
+    const slideLeft = () => {
+        let slider = document.getElementById("slider" + sliderId);
+        slider.scrollLeft = slider.scrollLeft - 500;
+    }
+
+    const slideRight = () => {
+        let slider = document.getElementById("slider" +sliderId);
+        slider.scrollLeft = slider.scrollLeft + 500;
+    }
+
     return (
         <>
             <div className='w-10/12 mx-auto my-6'>
                 <h2 className='text-white md:text-xl font-bold'>{title}</h2>   
                 <div className='relative flex items-center group'>
                     <AiOutlineArrowLeft 
-                        className='absolute bg-white rounded-full opacity-75 hover:opacity-100 z-50 cursor-pointer hidden group-hover:block' 
-                        size={40} 
+                        onClick={slideLeft}
+                        className='absolute bg-firstColor rounded-full opacity-75 hover:opacity-100 z-50 cursor-pointer group-hover:block' 
+                        size={60} 
                     />
-                    <div id={'slider'} className="w-full h-full overflow-x-scroll whitespace-nowrap scroll-smooth scrollbar-hide relative">
+                    <div id={'slider' + sliderId} className="w-full h-full overflow-x-scroll whitespace-nowrap scroll-smooth scrollbar-hide relative">
                         {movies.map((movie, id) => (
                             <Movie key={id} movie={movie}/>
                         ))}   
                     </div>  
                     <AiOutlineArrowRight 
-                        className='absolute right-0 bg-white rounded-full opacity-75 hover:opacity-100 z-50 cursor-pointer hidden group-hover:block' 
-                        size={40} 
+                        onClick={slideRight}
+                        className='absolute right-0 bg-firstColor rounded-full opacity-75 hover:opacity-100 z-50 cursor-pointer group-hover:block' 
+                        size={60} 
                     />
                 </div>
             </div>

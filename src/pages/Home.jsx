@@ -8,8 +8,8 @@ function Home() {
     return (
         <>
             <Main />
-            <Slider title="Popular Movies" fetchURL={requests.popularMovies} />
-            <Slider title="Top Rated Movies" fetchURL={requests.topRatedMovies} />
+            <Slider sliderId="1" title="Popular Movies" fetchURL={requests.popularMovies} />
+            <Slider sliderId="2" title="Top Rated Movies" fetchURL={requests.topRatedMovies} />
             <Footer />
         </>
     )
