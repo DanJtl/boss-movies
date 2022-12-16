@@ -10,7 +10,7 @@ function Movie({movie}) {
 
     return (
         <>
-            <div className='sm:w-[12.5rem] md:w-[15rem] lg:[17.5rem] relative inline-block cursor-pointer p-2'>
+            <div className='sm:w-[12.5rem] md:w-[15rem] lg:[17.5rem] relative inline-block cursor-pointer p-2 hover:bg-firstColor'>
                 <img 
                     className='w-full h-auto block' 
                     src={`https://image.tmdb.org/t/p/w500${movie?.poster_path}`} 
@@ -18,7 +18,7 @@ function Movie({movie}) {
                 />
                 <div 
                     onClick={handleClick} 
-                    className='absolute top-0 right-0 w-full h-full hover:bg-gray-900/80 opacity-0 hover:opacity-100 text-white text-center p-4'
+                    className='absolute top-0 right-0 w-full h-full hover:bg-gray-900/80 opacity-0 hover:opacity-100 text-white text-center p-6'
                 >
                     <h3 className='text-sm font-bold mb-2 text-firstColor'>
                         {movie?.title}
