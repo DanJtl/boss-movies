@@ -2,22 +2,35 @@ import React from 'react'
 
 function Movie({movie}) {
 
-    const movieUrl = `https://www.themoviedb.org/movie/${movie?.id}`;
+    const movieURL = `https://www.themoviedb.org/movie/${movie?.id}`;
 
     const handleClick = () => {
-        window.open(movieUrl, '_blank');
+        window.open(movieURL, '_blank');
     };
 
     return (
         <>
             <div className='sm:w-[12.5rem] md:w-[15rem] lg:[17.5rem] relative inline-block cursor-pointer p-2'>
-                <img className="w-full h-auto block" src={`https://image.tmdb.org/t/p/w500${movie?.poster_path}`} alt={movie.title} />
-                <div onClick={handleClick} className='absolute top-0 left-o w-full h-full hover:bg-gray-900/80 opacity-0 hover:opacity-100 text-white'>
-                    <p className='flex justify-center items-center h-full white-space-normal text-sm md:text-sm font-bold text-center'>
+                <img 
+                    className='w-full h-auto block' 
+                    src={`https://image.tmdb.org/t/p/w500${movie?.poster_path}`} 
+                    alt={movie.title} 
+                />
+                <div 
+                    onClick={handleClick} 
+                    className='absolute top-0 right-0 w-full h-full hover:bg-gray-900/80 opacity-0 hover:opacity-100 text-white text-center p-4'
+                >
+                    <h3 className='text-sm font-bold mb-2 text-firstColor'>
                         {movie?.title}
-                    </p>
-                    <p className='absolute top-2 left-2 text-white font-bold'>
+                    </h3>
+                    <p className='text-sm font-bold mb-2 italic'>
                         Rating: {movie?.vote_average}
+                    </p>
+                    <p className='text-sm font-bold mb-2 italic'>
+                        Votes: {movie?.popularity}
+                    </p>
+                    <p className='text-sm font-bold italic'>
+                        Language: {movie?.original_language}
                     </p>
                 </div>
             </div>

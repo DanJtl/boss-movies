@@ -21,10 +21,10 @@ function Main() {
         fetchData();
     }, []);
 
-    const movieUrl = `https://www.themoviedb.org/movie/${movie?.id}`;    
+    const movieURL = `https://www.themoviedb.org/movie/${movie?.id}`;    
 
     const handleClick = () => {
-        window.open(movieUrl, '_blank');
+        window.open(movieURL, '_blank');
     };
 
     return (
