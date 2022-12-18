@@ -3,9 +3,6 @@ import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Movies from "./pages/Movies";
 import Tvseries from "./pages/Tvseries";
-import requests from "./Requests";
-
-
 
 function App() {
   return (
