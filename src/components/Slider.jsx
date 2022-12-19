@@ -25,7 +25,7 @@ function Slider({title, fetchURL, sliderId}) {
     }
 
     const slideRight = () => {
-        let slider = document.getElementById("slider" +sliderId);
+        let slider = document.getElementById("slider" + sliderId);
         slider.scrollLeft = slider.scrollLeft + 500;
     }
 
