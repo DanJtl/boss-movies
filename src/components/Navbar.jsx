@@ -8,7 +8,6 @@ function Navbar() {
     const [searchMovie, setSearchMovie] = useState("");
     const [results, setResults] = useState([]);
 
-
     useEffect(() => {
         const searchMovies = async () => {
 
@@ -21,10 +20,9 @@ function Navbar() {
                 }  
             } else {
                 setResults([]);
-            }
-           
+            } 
         };
-        
+
         searchMovies();
     }, [searchMovie]);
 
@@ -47,32 +45,33 @@ function Navbar() {
                             </NavLink>
                         </div>
                         <div className="flex items-center">
-                            
-                                <input
-                                    type="text"
-                                    value={searchMovie}
-                                    onChange={event => setSearchMovie(event.target.value)}
-                                    placeholder="Search a movie..."
-                                    className="bg-gray-200 rounded-full text-gray-900 mt-2 md:mt-0 px-4 py-2 focus:outline-none focus:shadow-outline"
-                                />                           
-                            
+                            <input
+                                type="text"
+                                value={searchMovie}
+                                onChange={event => setSearchMovie(event.target.value)}
+                                placeholder="Search a movie..."
+                                className="bg-gray-200 rounded-full text-gray-900 mt-2 md:mt-0 px-4 py-2 focus:outline-none focus:shadow-outline"
+                            />                           
                         </div>
                     </div>
                 </div>
             </nav>
-            <div>
+            <div className="mb-6">
                 {results.map((movie, id) => (
-                    <div key={id} className='sm:w-[12.5rem] md:w-[15rem] lg:[17.5rem] relative inline-block cursor-pointer p-2 hover:bg-firstColor'>
+                    <a 
+                        key={id} 
+                        href={`https://www.themoviedb.org/movie/${movie?.id}`} 
+                        target="_blank" 
+                        rel="noreferrer" 
+                        className='sm:w-[12.5rem] md:w-[15rem] lg:[17.5rem] relative inline-block cursor-pointer p-2 hover:bg-thirdColor'
+                    >
                         <img 
                             className='w-full h-auto block' 
                             src={`https://image.tmdb.org/t/p/w500${movie?.poster_path}`} 
                             alt={movie.title} 
                         />
-                        <div 
-                            //  onClick={handleClick} 
-                            className='absolute top-0 right-0 w-full h-full hover:bg-gray-900/80 opacity-0 hover:opacity-100 text-white text-center p-6'
-                        >
-                            <h3 className='text-sm font-bold mb-2 text-firstColor'>
+                        <div className="text-white text-center">
+                            <h3 className='text-sm font-bold mb-2 text-yellow-300'>
                                 {movie?.title}
                             </h3>
                             <p className='text-sm font-bold mb-2 italic'>
@@ -85,7 +84,7 @@ function Navbar() {
                                 Language: {movie?.original_language}
                             </p>
                         </div>
-                    </div>
+                    </a>
                 ))}
             </div>
         </>

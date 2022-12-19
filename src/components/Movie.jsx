@@ -20,7 +20,7 @@ function Movie({movie}) {
                     onClick={handleClick} 
                     className='absolute top-0 right-0 w-full h-full hover:bg-gray-900/80 opacity-0 hover:opacity-100 text-white text-center p-6'
                 >
-                    <h3 className='text-sm font-bold mb-2 text-firstColor'>
+                    <h3 className='text-sm font-bold mb-2 text-yellow-300'>
                         {movie?.title}
                     </h3>
                     <p className='text-sm font-bold mb-2 italic'>
