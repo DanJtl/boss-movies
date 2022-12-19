@@ -1,12 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 function Movie({movie}) {
+    const [recentlyViewedMovie, setRecentlyViewedMovie] = useState([]);
 
     const movieURL = `https://www.themoviedb.org/movie/${movie?.id}`;
 
     const handleClick = () => {
         window.open(movieURL, '_blank');
+        setRecentlyViewedMovie([...recentlyViewedMovie, movie]);
     };
+    console.log(recentlyViewedMovie);
 
     return (
         <>
