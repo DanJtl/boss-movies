@@ -31,7 +31,7 @@ function Slider({title, fetchURL, sliderId}) {
 
     return (
         <>
-            <div className='w-10/12 mx-auto my-6'>
+            <div className='w-10/12 mx-auto my-12'>
                 <h2 className='text-white md:text-xl font-bold'>{title}</h2>   
                 <div className='relative flex items-center group'>
                     <AiOutlineArrowLeft 

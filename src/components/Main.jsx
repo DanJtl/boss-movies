@@ -36,7 +36,7 @@ function Main() {
         });
 
         if (!movieFound) {
-            recentlyViewed.push(movie);
+            recentlyViewed.unshift(movie);
             localStorage.setItem('recentlyViewedMovies', JSON.stringify(recentlyViewed));
         } 
     };
