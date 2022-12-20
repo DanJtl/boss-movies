@@ -37,12 +37,7 @@ function Navbar() {
                     </div>
                     <div className="w-full block flex-grow md:flex md:items-center md:w-auto">
                         <div className="text-xl md:flex-grow my-5">
-                            <NavLink to="Movies">
-                                <span className="block mt-4 md:inline-block md:mt-0 text-white hover:text-secondColor mr-8">Movies</span>
-                            </NavLink>
-                            <NavLink to="Tvseries">
-                                <span className="block mt-4 md:inline-block md:mt-0 text-white hover:text-secondColor mr-8">Tv-Series</span>
-                            </NavLink>
+                            <q className="text-white italic">"Where even the bad movies are Boss"</q>
                         </div>
                         <div className="flex items-center">
                             <input
@@ -56,7 +51,7 @@ function Navbar() {
                     </div>
                 </div>
             </nav>
-            <div className="mb-6">
+            <div className="flex items-center justify-between flex-wrap w-10/12 mx-auto">
                 {results.map((movie, id) => (
                     <a 
                         key={id} 
@@ -64,6 +59,16 @@ function Navbar() {
                         target="_blank" 
                         rel="noreferrer" 
                         className='sm:w-[12.5rem] md:w-[15rem] lg:[17.5rem] relative inline-block cursor-pointer p-2 hover:bg-thirdColor'
+                        onClick={() => {
+                            const storedMovies = JSON.parse(localStorage.getItem('recentlyViewedMovies')) || [];
+
+                            const movieFound = storedMovies.find(storedMovie => storedMovie.id === movie.id)
+
+                            if (!movieFound) {
+                                storedMovies.unshift(movie);
+                                localStorage.setItem("recentlyViewedMovies", JSON.stringify(storedMovies));
+                            }
+                        }}
                     >
                         <img 
                             className='w-full h-auto block' 

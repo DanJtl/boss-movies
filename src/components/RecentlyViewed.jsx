@@ -8,10 +8,11 @@ function RecentlyViewed({title}) {
         const interval = setInterval(() => {
             const storedMovies = JSON.parse(localStorage.getItem('recentlyViewedMovies')) || [];
             setRecentlyViewedMovie(storedMovies);
+
         }, 1000);
         return () => clearInterval(interval);
     }, []);
-
+    
     const slideLeft = () => {
         let slider = document.getElementById("slider");
         slider.scrollLeft = slider.scrollLeft - 500;
@@ -25,7 +26,7 @@ function RecentlyViewed({title}) {
     return (
         <>
             <div className='w-10/12 mx-auto my-12'>
-                <h2 className='text-white md:text-xl font-bold text-center'>{title}</h2>
+                <h2 className='text-white text-3xl font-bold text-center mb-2'>{title}</h2>
                 <div className='relative flex items-center group'>
                     <AiOutlineArrowLeft 
                         onClick={slideLeft}
@@ -34,12 +35,12 @@ function RecentlyViewed({title}) {
                     />
                     <div id={'slider'} className="w-full h-full overflow-x-scroll whitespace-nowrap scroll-smooth scrollbar-hide relative">
                         {recentlyViewedMovie.length > 0 ?
-                            recentlyViewedMovie.map(movie => (
+                            recentlyViewedMovie.map((movie, id) => (
                                 <a 
-                                href={`https://www.themoviedb.org/movie/${movie?.id}`} 
-                                target="_blank" 
-                                rel="noreferrer"
-                                key={movie.id} 
+                                    href={`https://www.themoviedb.org/movie/${movie?.id}`} 
+                                    target="_blank" 
+                                    rel="noreferrer"
+                                    key={id}
                                 > 
                                     <div 
                                         className='sm:w-[12.5rem] md:w-[15rem] lg:[17.5rem] relative inline-block cursor-pointer p-2 hover:bg-firstColor'
