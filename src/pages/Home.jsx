@@ -11,7 +11,7 @@ function Home() {
             <Main />
             <Slider sliderId="1" title="Popular Movies" fetchURL={requests.popularMovies} />
             <Slider sliderId="2" title="Top Rated Movies" fetchURL={requests.topRatedMovies} />
-            <RecentlyViewed title="Recently Viewed Products" />
+            <RecentlyViewed title="Recently Viewed Movies" />
             <Footer />
         </>
     )

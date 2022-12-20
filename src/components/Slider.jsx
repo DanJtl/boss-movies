@@ -42,7 +42,7 @@ function Slider({title, fetchURL, sliderId}) {
                     <div id={'slider' + sliderId} className="w-full h-full overflow-x-scroll whitespace-nowrap scroll-smooth scrollbar-hide relative">
                         {movies.map((movie, id) => (
                             <Movie key={id} movie={movie}/>
-                        ))}   
+                        ))}
                     </div>  
                     <AiOutlineArrowRight 
                         onClick={slideRight}
