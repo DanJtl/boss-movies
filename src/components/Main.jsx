@@ -38,7 +38,7 @@ function Main() {
         if (!movieFound) {
             recentlyViewed.push(movie);
             localStorage.setItem('recentlyViewedMovies', JSON.stringify(recentlyViewed));
-        }
+        } 
     };
 
     return (

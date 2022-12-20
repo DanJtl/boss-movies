@@ -17,41 +17,43 @@ function RecentlyViewed({title}) {
                 <h2 className='text-white md:text-xl font-bold'>{title}</h2>
                 <div className='relative flex items-center group'>
                     <div id={'slider'} className="w-full h-full overflow-x-scroll whitespace-nowrap scroll-smooth scrollbar-hide relative">
-                        {recentlyViewedMovie.map(movie => (
-                            <a 
-                            href={`https://www.themoviedb.org/movie/${movie?.id}`} 
-                            target="_blank" 
-                            rel="noreferrer"
-                            key={movie.id} 
-                            > 
-                                <div 
-                                    className='sm:w-[12.5rem] md:w-[15rem] lg:[17.5rem] relative inline-block cursor-pointer p-2 hover:bg-firstColor'
-                                >
-                                    <img 
-                                        className='w-full h-auto block' 
-                                        src={`https://image.tmdb.org/t/p/w500${movie?.poster_path}`} 
-                                        alt={movie?.title} 
-                                    />
+                        {recentlyViewedMovie.lenght > 0 }
+                            {recentlyViewedMovie.map(movie => (
+                                <a 
+                                href={`https://www.themoviedb.org/movie/${movie?.id}`} 
+                                target="_blank" 
+                                rel="noreferrer"
+                                key={movie.id} 
+                                > 
                                     <div 
-                                        className='absolute top-0 right-0 w-full h-full hover:bg-gray-900/80 opacity-0 hover:opacity-100 text-white text-center p-6'
+                                        className='sm:w-[12.5rem] md:w-[15rem] lg:[17.5rem] relative inline-block cursor-pointer p-2 hover:bg-firstColor'
                                     >
-                                        <h3 className='text-sm font-bold mb-2 text-yellow-300'>
-                                            {movie?.title}
-                                        </h3>
-                                        <p className='text-sm font-bold mb-2 italic'>
-                                            Rating: {movie?.vote_average}
-                                        </p>
-                                        <p className='text-sm font-bold mb-2 italic'>
-                                            Votes: {movie?.popularity}
-                                        </p>
-                                        <p className='text-sm font-bold italic'>
-                                            Language: {movie?.original_language}
-                                        </p>
-                                    </div>
-                                </div>   
-                            </a> 
-                        ))}
-                    </div>  
+                                        <img 
+                                            className='w-full h-auto block' 
+                                            src={`https://image.tmdb.org/t/p/w500${movie?.poster_path}`} 
+                                            alt={movie?.title} 
+                                        />
+                                        <div 
+                                            className='absolute top-0 right-0 w-full h-full hover:bg-gray-900/80 opacity-0 hover:opacity-100 text-white text-center p-6'
+                                        >
+                                            <h3 className='text-sm font-bold mb-2 text-yellow-300'>
+                                                {movie?.title}
+                                            </h3>
+                                            <p className='text-sm font-bold mb-2 italic'>
+                                                Rating: {movie?.vote_average}
+                                            </p>
+                                            <p className='text-sm font-bold mb-2 italic'>
+                                                Votes: {movie?.popularity}
+                                            </p>
+                                            <p className='text-sm font-bold italic'>
+                                                Language: {movie?.original_language}
+                                            </p>
+                                        </div>
+                                    </div>   
+                                </a> 
+                            ))}
+                        <p className='text-white md:text-l font-bold'>You have no recently viewed movies!</p>
+                    </div>       
                 </div> 
             </div>
         </>  
