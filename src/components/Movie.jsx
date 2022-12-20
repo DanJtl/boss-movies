@@ -20,8 +20,6 @@ function Movie({movie}) {
             recentlyViewed.push(movie);
             localStorage.setItem('recentlyViewedMovies', JSON.stringify(recentlyViewed));
         }
-        
-        console.log(recentlyViewed);
     };
 
     return (

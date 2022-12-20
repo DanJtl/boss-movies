@@ -25,6 +25,20 @@ function Main() {
 
     const handleClick = () => {
         window.open(movieURL, '_blank');
+        let movieFound = false;
+
+        const recentlyViewed = JSON.parse(localStorage.getItem('recentlyViewedMovies')) || [];
+
+        recentlyViewed.forEach(recentMovie => {
+            if (recentMovie.id === movie.id) {
+                movieFound = true;
+            }
+        });
+
+        if (!movieFound) {
+            recentlyViewed.push(movie);
+            localStorage.setItem('recentlyViewedMovies', JSON.stringify(recentlyViewed));
+        }
     };
 
     return (
