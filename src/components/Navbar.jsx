@@ -61,9 +61,7 @@ function Navbar() {
                         className='sm:w-[12.5rem] md:w-[15rem] lg:[17.5rem] relative inline-block cursor-pointer p-2 hover:bg-thirdColor'
                         onClick={() => {
                             const storedMovies = JSON.parse(localStorage.getItem('recentlyViewedMovies')) || [];
-
                             const movieFound = storedMovies.find(storedMovie => storedMovie.id === movie.id)
-
                             if (!movieFound) {
                                 storedMovies.unshift(movie);
                                 localStorage.setItem("recentlyViewedMovies", JSON.stringify(storedMovies));
